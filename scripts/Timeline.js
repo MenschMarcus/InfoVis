@@ -2,7 +2,7 @@ function Timeline()
 {
   var Timeline = {};
 
-  
+
   // =========================== H E A D E R =========================== //
   
   /* MEMBER FUNCTIONS */

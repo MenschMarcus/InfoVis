@@ -72,8 +72,6 @@ function Controller()
   
   function initController()
   {
-    console.log('MUH!');
-    
     // init members
     getDataValues();
     getIntervalValues();
@@ -83,11 +81,14 @@ function Controller()
     Timeline.initRange(Model.getYearRange()[0], Model.getYearRange()[1]);
     Timeline.initNowMarker(myNowYear);
 
+    // initially set all datasets in menu
+    Menu.initDatasetList(Model.getDatasetList());
+
     // initially fill year box
     Legend.updateYear(myNowYear);
 
     // initially fill legend
-    Legend.updateDataset(loc(myDataset+'title'), loc(myDataset+'descr'));
+    Legend.updateDataset(Model.getDatasetInfo(myDataset)[1], Model.getDatasetInfo(myDataset)[2]);
     Legend.updateScale(myDataScale, myIntervalValues, myIntervalColors);
 
     // initially update map

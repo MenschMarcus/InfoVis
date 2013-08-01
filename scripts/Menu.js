@@ -9,6 +9,7 @@ function Menu()
   
   // constructor
   Menu.initMenu = initMenu;
+  Menu.initDatasetList = initDatasetList;
 
   // setter
   Menu.setActiveColor = setActiveColor;
@@ -19,9 +20,7 @@ function Menu()
   var myActiveColor = null;
 
   // important elements
-  var myDatasetLE = $('#datasetLE');
-  var myDatasetFR = $('#datasetFR');
-  var myDatasetPOP = $('#datasetPOP');
+  var myDatasetList = $('#datasetList');
   var myScaleD = $('#scaleD');
   var myScaleC = $('#scaleC');
   var myRangeA = $('#rangeA');
@@ -38,9 +37,6 @@ function Menu()
   function initMenu()
   {
     // fill buttons with names
-    myDatasetLE.html(loc('LEtitle'));
-    myDatasetFR.html(loc('FRtitle'));
-    myDatasetPOP.html(loc('POPtitle'));
     myScaleD.html('discrete');
     myScaleC.html('continuous');
     myRangeA.html('absolute');
@@ -49,6 +45,12 @@ function Menu()
     myMaxColorSel.html('maximum color');
 
     myColorpicker.farbtastic();
+  }
+
+  function initDatasetList(inList)
+  { // inList[i]
+    for (var i in inList)
+      myDatasetList.append($('<option></option>').val(i).html("horst"));
   }
 
 

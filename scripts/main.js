@@ -30,14 +30,14 @@ $(document).ready(function()
 
         // initialise controller
         Controller = Controller();
-        Controller.initController(); // --> will be done by Model because it needs so long to load
+        //~ Controller.initController(); --> will be done by Model because it needs so long to load
 
         // make imprint
         $('#imprint').html(loc('imprint'));
         
         // disable text selection for all major elements
-        disableTextSelectFor('map');
-        disableTextSelectFor('timeline');
+        //~ disableTextSelectFor('map');
+        //~ disableTextSelectFor('timeline');
       }
     ,500);
   

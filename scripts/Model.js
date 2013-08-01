@@ -12,6 +12,7 @@ function Model()
 
   // getter
   Model.getYearRange = getYearRange;                // get min[0]/max[1] year of data visualisation
+  Model.getDatasetList = getDatasetList;            // get list of names of datasets
   Model.getDatasetInfo = getDatasetInfo;            // get name of dataset
   Model.getValueRange = getValueRange;              // get min[0]/max[1] value for [dataset][year]
   Model.getValueForRegion = getValueForRegion;      // get value for [region][dataset][year]
@@ -289,7 +290,7 @@ function Model()
     $.ajax(
       {
         dataType: 'json',
-        url: 'http://api.worldbank.org/countries/all?per_page=500&format=jsonP&prefix=?',
+        url: 'data/countries.json',
         async: false,
         success: function(data)
           {
@@ -430,7 +431,7 @@ function Model()
     }
     
     var dsName = myDatasets[0][0];
-    var url = 'http://api.worldbank.org/countries/all/indicators/' + dsName + '?per_page=15000&date=1960:2010&format=jsonP&prefix=?';
+    var url = 'data/' + dsName + '.json';
 
     // IMPORTANT (!!!)
     // call getJSON in new scope (function), handing loop variable i into it
@@ -491,7 +492,8 @@ function Model()
     for (var i = start; i < len; i++)
     {
       var dsName = myDatasets[i][0];
-      var url = 'http://api.worldbank.org/countries/all/indicators/' + dsName + '?per_page=15000&date=1960:2010&format=jsonP&prefix=?';
+      var url = 'data/' + dsName + '.json';
+      //~ var url = 'http://api.worldbank.org/countries/all/indicators/' + dsName + '?per_page=15000&date=1960:2010&format=jsonP&prefix=?';
 
       // IMPORTANT (!!!)
       // call getJSON in new scope (function), handing loop variable i into it
@@ -561,7 +563,6 @@ function Model()
                   myRegionData[dsName][year][regName] /= relevantPop[year][regName];
                 }
               }
-              console.log(myRegionData)
             }
           );
         }
@@ -574,27 +575,27 @@ function Model()
   {
     return new Array(myMinYear, myMaxYear);
   }
+
+  function getDatasetList()
+  {
+    var outList = new Array();
+
+    for (var i in myDatasets)
+      outList.push(myDatasets[i][1]);
+
+    return outList;
+  }
   
   function getDatasetInfo(inDsId)
   {
     // check if dataset name is in list of possible datasets
-    var index = -1;
-    for (var i in myDatasets)
-    {
-      if (myDatasets[i][0] == inDsId)
-        index = i;
-        break;
-    }
-    
-    // error handling: if element not in the list, throw error and set first dataset instead
-    if (index == -1)
+    if (inDsId >= myDatasets.length)
     {
       console.log("wrong dataset name! choose population instead");
       index = 0;
     }
 
-
-    return myDatasets[index];
+    return myDatasets[inDsId];
   }
 
   function getValueRange(inDsId, inYear)
