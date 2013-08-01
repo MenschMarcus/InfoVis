@@ -1,0 +1,86 @@
+/** year display **/
+#year
+{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -40px;
+  width: 80px;
+  height: 40px;
+  font-size: 2em;
+  text-align: center;
+  line-height: 38px;
+}
+
+/** legend **/
+#legend
+{
+  position: absolute;
+  bottom: 13px;
+  left: 15px;
+  width: 100px;
+  background: rgba(255,255,255, 0.90);
+  border: 1px solid #999999;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  box-shadow: 1px 1px 1px #999999;
+}
+
+#dsTitle
+{
+  margin-top: 4px;
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+#dsDescr, #dsNumFormat
+{
+  margin-top: 3px;
+  width: 100px;
+  text-align: center;  
+  font-size: 0.68em;
+}
+
+#dsScaleWrapper
+{
+  margin-top: 10px;
+  margin-bottom: 5px; 
+  width: 100px;
+}
+
+.dsScale
+{
+  position: relative;
+  left: 50%;
+  width: 90px;
+  height: 205px;
+  margin-top: 3px;
+  margin-left: -46px;
+  border: none;
+  background-color: transparent;
+}
+
+.rangeVal
+{
+  position: relative;
+  left: 50%;
+  width: 90px;
+  height: 30px;
+  margin-top: 3px;
+  margin-left: -46px;
+  border: none;
+  background-color: transparent;
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 30px;
+}
+
+.focus
+{
+  border: 1px solid black;
+}

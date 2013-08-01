@@ -1,0 +1,27 @@
+/* for Firefox: each element that shall be animated needs a bg color -> make it fully transparent */
+.anim
+{
+  background-color: rgba(255,255,255,0.01);
+}
+
+/* info boxes of culture continents <div> with name of cc inside */
+.regInfo
+{
+  position: absolute;
+  width: 90px;
+  height: 25px;
+  line-height: 22px;
+  background: rgba(255,255,255, 0.90);
+  border: 1px solid #999999;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  box-shadow: 1px 1px 1px #999999;
+}
+.regInfoName
+{
+  margin: 2px 0 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: 0.75em;
+}

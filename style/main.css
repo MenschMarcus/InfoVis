@@ -1,0 +1,283 @@
+/*** INTRO ***/
+html,body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/*** ELEMENTS ***/
+div
+{
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+svg
+{
+	overflow: hidden;
+}
+
+p
+{
+	padding: 0.1em;
+}
+
+table
+{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+input[type="radio"]
+{
+  margin: 5px;
+}
+
+
+/*** COLORS ***/
+
+body
+{
+	background: #FFFFFF;    /* background of page */
+	color: #190C1E;         /* font */
+}
+#wrapper
+{
+  margin-top: 10px;
+  border: 1px solid #888888;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 3px 3px 4px #888888 inset;
+  background: #EEEEEE;    /* background of content */
+}
+                          /* other colors: #BDC09C and #A1A741 */
+                          
+.interact
+{
+  background-color: #DADAEB;
+  box-shadow: 3px 3px 3px #666;
+  font-weight: bold;
+}
+.interact:hover
+{
+  background-color: #D4B9DA;
+  box-shadow: 3px 3px 3px #ad7fa8;
+}          
+
+/*** FONTS AND SIZES **/
+body
+{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+}
+
+h1
+{
+	margin-top: 0.2em;
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: bold;
+}
+
+h2
+{
+	margin-top: 0.1em;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+h3
+{
+	margin-top: 0.01em;
+	font-size: 1em;
+	text-decoration: underline;
+}
+
+.slogan
+{
+	margin: 10px;
+	font-size: 2.5em;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+}
+
+em
+{
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+form
+{
+	font-size: 0.9em;
+}
+
+.small
+{
+  font-size: 0.8em;
+}
+
+
+#menu
+{
+  font-size: 0.90em;
+  line-height: 1.35em;
+}
+
+/* for Opera: remove button border */
+button
+{
+  border: 0;
+}
+
+
+/*** DIV STRUCTURE ***/
+
+/* main wrapper containing everything, centered */
+#wrapper
+{
+  position: absolute;   /* because it is special positioning */
+  top: 0;               
+  left: 50%;            /* center horizontally */
+  margin-left: -576px;  /* center horizontally */
+  height: 552px;
+  width: 1152px;
+  padding-bottom: 5px;  /* some space in the bottom of wrapper */
+}
+
+/* left / right wrapper
+  left contains menu
+  right contains map and timeline on top of each other */
+#wrapperLeft
+{
+  position: relative; /* because navigation is inside wrapper, it should be relative to its coordinate system */
+  float: left;        /* put element as the first one to the left */
+  width: 300px;
+  height: 100%;
+}
+
+#wrapperRight
+{
+  position: relative; /* because map is inside wrapper, it should be relative to its coordinate system */
+  float: left;        /* put element as the second one to the left */
+  width: 852px;
+  height: 100%;
+}
+
+/* cover above wrapperRight to grey out the visualisation */
+#visCover
+{
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  margin-left: -275px;
+  height: 553px;
+  width: 850px;
+  z-index: 200;
+  background-color: rgba(255,255,255,0.01);
+}
+
+/* imprint at bottom of page */
+#imprint
+{
+  position: absolute;
+  top: 575px;
+  left: 50%;            /* center horizontally */
+  margin-left: -576px;  /* center horizontally */
+  width: 1152px;
+  text-align: right;
+  font-size: 0.75em;
+}
+
+/* content elements: navigation, map and timeline */
+#menu {
+  position: relative;
+  width: 300px;
+  height: 100%;
+}
+
+#map {
+  position: relative;
+  width: 852px;
+  height: 432px;
+}
+
+#timeline {
+  position: relative;
+  width: 852px;  
+  height: 120px;
+}
+
+
+/** DISABLE TEXT SELECTION **/
+
+.noTextSelect
+{
+  -moz-user-select: none;       /* Firefox */
+  -webkit-touch-callout: none;  /* iOs */
+  -webkit-user-select: none;    /* Safari, Chrome */
+  -khtml-user-select: none;     /* Konqueror */
+  -ms-user-select: none;        /* IE */
+  user-select: none;            /* new CSS3 */
+}
+
+
+/**
+ * Farbtastic Color Picker 1.2
+ * © 2008 Steven Wittens
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+.farbtastic {
+  position: relative;
+}
+.farbtastic * {
+  position: absolute;
+  cursor: crosshair;
+}
+.farbtastic, .farbtastic .wheel {
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .color, .farbtastic .overlay {
+  top: 47px;
+  left: 47px;
+  width: 101px;
+  height: 101px;
+}
+.farbtastic .wheel {
+  background: url(../graphics/colorpickerWheel.png) no-repeat;
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .overlay {
+  background: url(../graphics/colorpickerMask.png) no-repeat;
+}
+.farbtastic .marker {
+  width: 17px;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden; 
+  background: url(../graphics/colorpickerMarker.png) no-repeat;
+}

@@ -1,0 +1,30 @@
+#menuContent
+{
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.testButt
+{
+  width: 80px;
+  height: 35px;
+  margin: 5px;
+}
+
+#colorSelector
+{
+  margin-left: 38px;
+  text-align: center;
+}
+
+#colorpicker
+{
+  margin-left: 38px;
+}
+
+#minColor, #maxColor
+{
+  width: 80px;
+  margin: 5px;
+}

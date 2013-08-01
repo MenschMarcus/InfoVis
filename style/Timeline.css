@@ -1,0 +1,153 @@
+/*** DIV STRUCTURE ***/
+
+#aniControl
+{
+  position: relative;
+  float: left;
+  top: -2.5px;
+  left: 15px; /* offset to the left, so that ani control in underneath legend of map */
+  width: 100px;
+  height: 120px;
+}
+
+#tlMain
+{
+  position: relative;
+  float: left;
+  left: 50px;  /* same offset as aniControl + 27 px threshold, to be next to each other */
+  width: 655px;  /* actual width of timeline (729) - 27 px thresholds left - 47 px threshold right = 655 */
+  height: 120px;
+  background-image: url('../graphics/tlBar.png');
+  background-repeat: repeat-x;
+  background-position: 0 55px;
+  cursor: default
+}
+
+
+/*==============*/
+
+/** NOW MARKER **/
+#nowMarker
+{
+  position: absolute;
+  top: 16px;
+  left: 200px;
+  width: 25px;
+  height: 40px;
+  margin-left: -10px;
+  z-index: 3;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-image: url('../graphics/nowMarker.png');
+}
+
+
+/*** YEAR MARKERS ***/
+/** POSITION **/
+
+.yearMarker
+{
+  position: absolute;
+  width: 50px;              /* text width, marker will be centered */
+  height: 78px;             /* marker 60px + text 18px = 78 px */
+  margin-left: -25px;       /* centers marker */
+  z-index: 2;
+  top: 20px;
+  background: url(../graphics/yearMarker.png) center no-repeat;
+  cursor: pointer;
+}
+
+/** YEAR NUMBER **/
+
+.yearMarker p
+{
+  position: absolute;
+  bottom: -2px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 50px;
+  height: 18px;
+  text-align: center;
+}
+
+
+/*=======================*/
+/*** ANIMATION CONTROL ***/
+
+/** PLAY BUTTONS **/
+
+#playButt
+{
+  position: relative;
+  top: -2px;
+  left: 26px;   /* total width (100) - half total width (50) - half button width (25) = 25 */
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-image: url(../graphics/playForw.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+/** SPEED CONTROL **/
+
+#aniDirection, #aniSpeed
+{
+  position: relative;
+  width: 100px;
+  height: 35px;
+}
+
+#directionBack, #directionForw,
+#speedDecr, #speedIncr
+{
+  position: absolute;
+  top: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  background-repeat: no-repeat;
+  background-position: center center;  
+}
+#speedIncr, #directionForw
+{
+  left: 75.0px;
+}
+
+#directionBack
+{
+  background-image: url(../graphics/dirBack.png);
+}
+#directionForw
+{
+  background-image: url(../graphics/dirForw.png);
+}
+#speedDecr
+{
+  background-image: url(../graphics/speedDecr.png);
+}
+#speedIncr
+{
+  background-image: url(../graphics/speedIncr.png);
+}
+
+
+/* vertical centering !!! FUCK */
+#directionValWrapper, #speedValWrapper
+{
+  position: absolute;
+  left: 26px;
+  height: 40px;
+  width: 50px;
+  line-height: 38px;
+  text-align: center;
+}
+#directionVal, #speedVal
+{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  font-size: 0.7em;
+}
